@@ -28,6 +28,7 @@ header {
 }
 
 .work-list__item {
+  position: relative;
   width: 8rem;
   height: 40rem;
   background-color: grey;
@@ -36,7 +37,10 @@ header {
 .work-list__item::before, .work-list__item::after {
   content: "";
   position: absolute;
-  width: 5%;
+  width: 1rem;
   height: 100%;
-  color: white;
+  right: 8rem;
+}
+.work-list__item::after {
+  left: 8rem;
 }/*# sourceMappingURL=styles.css.map */
