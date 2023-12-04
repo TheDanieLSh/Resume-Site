@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+header {
+  height: 100vh;
+  background: linear-gradient(to top, rgb(5, 5, 5) 60%, rgb(48, 51, 52) 100%);
+}
+
+.work-list {
+  position: relative;
+  top: 30rem;
+  display: flex;
+  justify-content: center;
+}
+
+.work-list__item {
+  width: 8rem;
+  height: 40rem;
+  background-color: grey;
+  margin: 0 1rem;
+}
+.work-list__item::before, .work-list__item::after {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
