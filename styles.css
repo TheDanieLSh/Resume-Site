@@ -16,15 +16,17 @@ html {
 }
 
 header {
-  height: 100vh;
+  height: 100dvh;
   background: linear-gradient(to top, rgb(5, 5, 5) 60%, rgb(48, 51, 52) 100%);
 }
 
 .work-list {
   position: relative;
-  top: 30vh;
+  top: 30dvh;
   display: flex;
   justify-content: center;
+  perspective: 50rem;
+  transform-style: preserve-3d;
 }
 
 .work-list__item {
@@ -35,6 +37,7 @@ header {
   margin: 0 1rem;
   background-size: cover;
   background-position: center;
+  transition-duration: 0.2s;
 }
 .work-list__item::before, .work-list__item::after {
   content: "";
@@ -45,4 +48,25 @@ header {
 }
 .work-list__item::after {
   left: 8rem;
+}
+.work-list__item:hover {
+  transform: translateZ(8rem);
+}
+.work-list__item:hover + * {
+  transform: translateZ(4rem) rotateY(15deg);
+}
+.work-list__item:hover + * + * {
+  transform: translateZ(2rem) rotateY(5deg);
+}
+.work-list__item:hover + * + * + * {
+  transform: translateZ(1rem) rotateY(1deg);
+}
+.work-list__item:has(+ :hover) {
+  transform: translateZ(4rem) rotateY(-15deg);
+}
+.work-list__item:has(+ * + :hover) {
+  transform: translateZ(2rem) rotateY(-5deg);
+}
+.work-list__item:has(+ * + * + :hover) {
+  transform: translateZ(1rem) rotateY(-1deg);
 }/*# sourceMappingURL=styles.css.map */

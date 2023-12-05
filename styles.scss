@@ -14,14 +14,16 @@ html {
 }
 
 header {
-    height: 100vh;
+    height: 100dvh;
     background: linear-gradient(to top, rgba(5,5,5,1) 60%, rgba(48,51,52,1) 100%);
 }
 .work-list {
     position: relative;
-    top: 30vh;
+    top: 30dvh;
     display: flex;
     justify-content: center;
+    perspective: 50rem;
+    transform-style: preserve-3d;
 }
 .work-list__item {
     position: relative;
@@ -31,6 +33,7 @@ header {
     margin: 0 1rem;
     background-size: cover;
     background-position: center;
+    transition-duration: 0.2s;
 
     &::before, &::after {
         content: '';
@@ -41,5 +44,27 @@ header {
     }
     &::after {
         left: 8rem;
+    }
+
+    &:hover {
+        transform: translateZ(8rem);
+        & + * {
+            transform: translateZ(4rem) rotateY(15deg);
+            & + * {
+                transform: translateZ(2rem) rotateY(5deg);
+                & + * {
+                    transform: translateZ(1rem) rotateY(1deg);
+                }
+            }
+        }
+    }
+    &:has(+ :hover) {
+        transform: translateZ(4rem) rotateY(-15deg);
+    } 
+    &:has(+ * + :hover) {
+        transform: translateZ(2rem) rotateY(-5deg);
+    }
+    &:has(+ * + * + :hover) {
+        transform: translateZ(1rem) rotateY(-1deg);
     }
 }
