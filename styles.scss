@@ -19,7 +19,7 @@ header {
 }
 .work-list {
     position: relative;
-    top: 30rem;
+    top: 30vh;
     display: flex;
     justify-content: center;
 }
@@ -29,6 +29,9 @@ header {
     height: 40rem;
     background-color: grey;
     margin: 0 1rem;
+    background-size: cover;
+    background-position: center;
+
     &::before, &::after {
         content: '';
         position: absolute;
