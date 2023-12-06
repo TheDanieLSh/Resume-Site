@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
     border: none;
+    font-family: inherit;
+    font-weight: normal;
 }
 a {
     text-decoration: none;
@@ -17,9 +21,19 @@ header {
     height: 100dvh;
     background: linear-gradient(to top, rgba(5,5,5,1) 60%, rgba(48,51,52,1) 100%);
 }
+.works-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7dvh;
+    color: white;
+    font-size: 5rem;
+    font-family: 'Tektur', sans-serif;
+    letter-spacing: 0.8rem;
+}
 .work-list {
     position: relative;
-    top: 30dvh;
+    top: 23dvh;
     display: flex;
     justify-content: center;
     perspective: 50rem;
@@ -47,6 +61,7 @@ header {
     }
 
     &:hover {
+        width: 13rem;
         transform: translateZ(8rem);
         & + * {
             transform: translateZ(4rem) rotateY(15deg);
@@ -67,4 +82,12 @@ header {
     &:has(+ * + * + :hover) {
         transform: translateZ(1rem) rotateY(-1deg);
     }
+}
+.work-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Tektur', sans-serif;
 }
