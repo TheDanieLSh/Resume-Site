@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
 
 * {
     margin: 0;
@@ -19,7 +19,7 @@ html {
 
 header {
     height: 100dvh;
-    background: linear-gradient(to top, rgba(5,5,5,1) 60%, rgba(48,51,52,1) 100%);
+    background: linear-gradient(to top, rgba(5,5,5,1) 65%, rgba(48,51,52,1) 100%);
 }
 .works-header {
     position: absolute;
@@ -28,6 +28,7 @@ header {
     top: 7dvh;
     color: white;
     font-size: 5rem;
+    font-weight: 500;
     font-family: 'Tektur', sans-serif;
     letter-spacing: 0.8rem;
 }
@@ -42,7 +43,7 @@ header {
 .work-list__item {
     position: relative;
     width: 8rem;
-    height: 40rem;
+    height: 40svh;
     background-color: grey;
     margin: 0 1rem;
     background-size: cover;
@@ -87,7 +88,9 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    top: 73dvh;
     color: white;
     font-size: 3.5rem;
+    font-weight: 400;
     font-family: 'Tektur', sans-serif;
 }
