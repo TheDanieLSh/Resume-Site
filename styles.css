@@ -18,6 +18,10 @@ html {
   font-size: 10px;
 }
 
+:root {
+  --index: calc(1vw + 1vh);
+}
+
 header {
   height: 100dvh;
   background: linear-gradient(to top, rgb(5, 5, 5) 65%, rgb(48, 51, 52) 100%);
@@ -27,12 +31,12 @@ header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 7dvh;
+  top: calc(var(--index) * 2.2);
   color: white;
-  font-size: 5rem;
+  font-size: calc(var(--index) * 2.5);
   font-weight: 500;
   font-family: "Tektur", sans-serif;
-  letter-spacing: 0.8rem;
+  letter-spacing: calc(var(--index) / 3.2);
 }
 
 .work-list {
@@ -40,16 +44,16 @@ header {
   top: 23dvh;
   display: flex;
   justify-content: center;
-  perspective: 50rem;
+  perspective: calc(var(--index) * 22);
   transform-style: preserve-3d;
 }
 
 .work-list__item {
   position: relative;
-  width: 8rem;
-  height: 40svh;
+  width: calc(var(--index) * 3.5);
+  height: calc(var(--index) * 17.5);
   background-color: grey;
-  margin: 0 1rem;
+  margin: 0 calc(var(--index) / 2);
   background-size: cover;
   background-position: center;
   transition-duration: 0.2s;
@@ -57,43 +61,43 @@ header {
 .work-list__item::before, .work-list__item::after {
   content: "";
   position: absolute;
-  width: 1rem;
+  width: calc(var(--index) / 3);
   height: 100%;
-  right: 8rem;
+  right: calc(var(--index) * 3.5);
 }
 .work-list__item::after {
-  left: 8rem;
+  left: calc(var(--index) * 3.5);
 }
 .work-list__item:hover {
-  width: 13rem;
-  transform: translateZ(8rem);
+  width: calc(var(--index) * 5.5);
+  transform: translateZ(calc(var(--index) * 3.5));
 }
 .work-list__item:hover + * {
-  transform: translateZ(4rem) rotateY(15deg);
+  transform: translateZ(calc(var(--index) * 1.5)) rotateY(15deg);
 }
 .work-list__item:hover + * + * {
-  transform: translateZ(2rem) rotateY(5deg);
+  transform: translateZ(calc(var(--index) / 2)) rotateY(5deg);
 }
 .work-list__item:hover + * + * + * {
-  transform: translateZ(1rem) rotateY(1deg);
+  transform: translateZ(calc(var(--index) / 4)) rotateY(1deg);
 }
 .work-list__item:has(+ :hover) {
-  transform: translateZ(4rem) rotateY(-15deg);
+  transform: translateZ(calc(var(--index))) rotateY(-15deg);
 }
 .work-list__item:has(+ * + :hover) {
-  transform: translateZ(2rem) rotateY(-5deg);
+  transform: translateZ(calc(var(--index) / 2)) rotateY(-5deg);
 }
 .work-list__item:has(+ * + * + :hover) {
-  transform: translateZ(1rem) rotateY(-1deg);
+  transform: translateZ(calc(var(--index) / 4)) rotateY(-1deg);
 }
 
 .work-name {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 73dvh;
+  top: calc(var(--index) * 27.5);
   color: white;
-  font-size: 3.5rem;
+  font-size: calc(var(--index) * 1.5);
   font-weight: 400;
   font-family: "Tektur", sans-serif;
 }/*# sourceMappingURL=styles.css.map */
