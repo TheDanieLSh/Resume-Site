@@ -37,7 +37,7 @@ header {
 }
 .work-list {
     position: relative;
-    top: 23dvh;
+    top: calc(var(--index) * 7.5);
     display: flex;
     justify-content: center;
     perspective: calc(var(--index) * 22);
