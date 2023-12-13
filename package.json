@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/jquery": "^3.5.29"
+  },
+  "dependencies": {
+    "fullpage.js": "^4.0.20"
   }
 }

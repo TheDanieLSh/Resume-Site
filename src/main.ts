@@ -1,7 +1,7 @@
 console.log('viewport width ->', window.innerWidth);
 console.log('viewport height ->', window.innerHeight);
 
-$('#pagepiling').pagepiling();
+$("#fullpage").fullpage();
 const works = document.querySelector('.works') as HTMLElement;
 works.addEventListener('mouseover', (e: MouseEvent) => {
     const title = document.querySelector('.work-name') as HTMLElement;

@@ -1,7 +1,7 @@
 "use strict";
 console.log('viewport width ->', window.innerWidth);
 console.log('viewport height ->', window.innerHeight);
-$('#pagepiling').pagepiling();
+$("#fullpage").fullpage();
 const works = document.querySelector('.works');
 works.addEventListener('mouseover', (e) => {
     const title = document.querySelector('.work-name');
