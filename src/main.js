@@ -1,7 +1,14 @@
 "use strict";
 console.log('viewport width ->', window.innerWidth);
 console.log('viewport height ->', window.innerHeight);
-$("#fullpage").fullpage();
+// type fpType = (id: string, {
+//     autoScrollingType: boolean,
+//     scrollHorizontallyType: boolean
+// })
+// new fullpage('#fullpage', {
+// 	autoScrolling:true,
+// 	scrollHorizontally: true
+// });
 const works = document.querySelector('.works');
 works.addEventListener('mouseover', (e) => {
     const title = document.querySelector('.work-name');
