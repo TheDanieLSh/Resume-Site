@@ -16,37 +16,52 @@ a {
 
 html {
   font-size: 10px;
+  scroll-snap-type: y mandatory;
 }
 
 :root {
   --index: calc(1vw + 1vh);
 }
 
+header {
+  scroll-snap-align: start;
+  background: linear-gradient(to bottom, rgb(5, 5, 5) 90%, rgb(48, 51, 52) 100%);
+  height: 100vh;
+}
+
 .profile {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  height: 100vh;
-  background: linear-gradient(to bottom, rgb(5, 5, 5) 65%, rgb(48, 51, 52) 100%);
+  padding: 5%;
 }
 
 .profile__pic {
+  position: relative;
   grid-column: 1;
   grid-row: 1;
-  width: 100%;
-  height: 100%;
+  width: calc(var(--index) * 10);
+  height: calc(var(--index) * 10);
+  border-radius: 50%;
+  overflow: hidden;
 }
 .profile__pic img {
+  position: absolute;
   width: 100%;
+  bottom: calc(var(--index) - var(--index) * 2.7);
+  left: calc(var(--index) / 70);
 }
 
 .works {
+  scroll-snap-align: start;
   position: relative;
   height: 100vh;
   background: linear-gradient(to top, rgb(5, 5, 5) 65%, rgb(48, 51, 52) 100%);
 }
 
-.works-header {
+.works__header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
