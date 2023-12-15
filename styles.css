@@ -16,7 +16,6 @@ a {
 
 html {
   font-size: 10px;
-  scroll-snap-type: y mandatory;
 }
 
 :root {
@@ -24,7 +23,6 @@ html {
 }
 
 header {
-  scroll-snap-align: start;
   background: linear-gradient(to bottom, rgb(5, 5, 5) 90%, rgb(48, 51, 52) 100%);
   height: 100vh;
 }
@@ -55,7 +53,6 @@ header {
 }
 
 .works {
-  scroll-snap-align: start;
   position: relative;
   height: 100vh;
   background: linear-gradient(to top, rgb(5, 5, 5) 65%, rgb(48, 51, 52) 100%);

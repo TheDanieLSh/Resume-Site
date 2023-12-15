@@ -5,10 +5,10 @@ console.log('viewport height ->', window.innerHeight);
 //     autoScrollingType: boolean,
 //     scrollHorizontallyType: boolean
 // })
-// new fullpage('#fullpage', {
-// 	autoScrolling:true,
-// 	scrollHorizontally: true
-// });
+new fullpage('#fullpage', {
+	autoScrolling:true,
+	scrollHorizontally: true
+});
 const works = document.querySelector('.works') as HTMLElement;
 works.addEventListener('mouseover', (e: MouseEvent) => {
     const title = document.querySelector('.work-name') as HTMLElement;
