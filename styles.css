@@ -25,21 +25,23 @@ html {
 header {
   background: linear-gradient(to bottom, rgb(5, 5, 5) 90%, rgb(48, 51, 52) 100%);
   height: 100vh;
+  color: white;
+  font-size: calc(var(--index));
 }
 
 .profile {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   padding: 5%;
 }
 
 .profile__pic {
   position: relative;
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1/3;
   width: calc(var(--index) * 10);
   height: calc(var(--index) * 10);
   border-radius: 50%;
@@ -50,6 +52,36 @@ header {
   width: 100%;
   bottom: calc(var(--index) - var(--index) * 2.7);
   left: calc(var(--index) / 70);
+}
+
+.profile__name {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.profile__position {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: end;
+}
+
+.profile__birthdate {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: end;
+}
+
+.profile__phone-number {
+  grid-column: 3;
+  grid-row: 4;
+  justify-self: end;
+}
+
+.profile__email {
+  grid-column: 3;
+  grid-row: 5;
+  justify-self: end;
 }
 
 .works {

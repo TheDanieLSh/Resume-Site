@@ -1,10 +1,6 @@
 "use strict";
 console.log('viewport width ->', window.innerWidth);
 console.log('viewport height ->', window.innerHeight);
-// type fpType = (id: string, {
-//     autoScrollingType: boolean,
-//     scrollHorizontallyType: boolean
-// })
 new fullpage('#fullpage', {
     autoScrolling: true,
     scrollHorizontally: true
