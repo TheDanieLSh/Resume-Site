@@ -2,8 +2,10 @@ console.log('viewport width ->', window.innerWidth);
 console.log('viewport height ->', window.innerHeight);
 
 new fullpage('#fullpage', {
-	autoScrolling:true,
-	scrollHorizontally: true
+	scrollHorizontally: true,
+    scrollingSpeed: 900,
+    navigation: true,
+    navigationTooltips: ['Главная','Подробная информация','Мои работы'],
 });
 const works = document.querySelector('.works') as HTMLElement;
 works.addEventListener('mouseover', (e: MouseEvent) => {

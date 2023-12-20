@@ -115,6 +115,23 @@ header {
   font-weight: 700;
 }
 
+.info {
+  position: relative;
+  height: 100vh;
+  background: radial-gradient(100% 70%, rgb(5, 5, 5), rgb(24, 25, 25));
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.info__list {
+  position: absolute;
+  top: calc(var(--index) * 6);
+  left: calc(var(--index));
+}
+.info__list li {
+  list-style: none;
+}
+
 .works {
   position: relative;
   height: 100vh;
