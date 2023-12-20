@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 
 * {
     margin: 0;
@@ -8,20 +9,19 @@
     border: none;
     font-family: inherit;
     font-weight: normal;
+    font-size: 100%;
 }
 a {
     text-decoration: none;
     color: inherit;
 }
-html {
-    font-size: 10px;
-}
 :root {
     --index: calc(1vw + 1vh);
+    font-size: var(--index);
 }
 
 header {
-    background: linear-gradient(to bottom, rgba(5,5,5,1) 90%, rgba(48,51,52,1) 100%);
+    background: linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(24,25,25,1) 100%);
     height: 100vh;
     color: white;
     font-size: calc(var(--index));
@@ -31,8 +31,9 @@ header {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 5)) repeat(2, calc(var(--index) * 2)) repeat(3, calc(var(--index) * 3));
     padding: 5%;
+    font-family: 'Montserrat', sans-serif;
 }
 .profile__pic {
     position: relative;
@@ -53,6 +54,7 @@ header {
     grid-column: 3;
     grid-row: 1;
     justify-self: end;
+    font-weight: 700;
 }
 .profile__position {
     grid-column: 3;
@@ -66,19 +68,46 @@ header {
 }
 .profile__phone-number {
     grid-column: 3;
-    grid-row: 4;
+    grid-row: 5;
     justify-self: end;
 }
 .profile__email {
     grid-column: 3;
-    grid-row: 5;
+    grid-row: 6;
     justify-self: end;
+}
+.profile__stack {
+    grid-column: 1;
+    grid-row: 7;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--index) / 2.5);
+    animation: stack_appear 1.2s;
+}
+@keyframes stack_appear {
+    from {
+        transform: translateX(calc(var(--index) * 2));
+        opacity: 0;
+    }
+    to {
+        transform: 0;
+        opacity: 1;
+    }
+}
+.stack__header {
+    font-weight: 700;
+}
+.profile__pdf {
+    grid-column: 3;
+    grid-row: 9;
+    justify-self: end;
+    font-weight: 700;
 }
 
 .works {
     position: relative;
     height: 100vh;
-    background: linear-gradient(to top, rgba(5,5,5,1) 65%, rgba(48,51,52,1) 100%);
+    background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(24,25,25,1) 100%);
 }
 .works__header {
     position: absolute;
