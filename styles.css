@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 * {
@@ -93,6 +94,9 @@ header {
   gap: calc(var(--index) / 2.5);
   animation: stack_appear 1.2s;
 }
+.profile__stack:hover + .stack__more::after {
+  animation: arrow__up_down 1s;
+}
 
 @keyframes stack_appear {
   from {
@@ -104,8 +108,36 @@ header {
     opacity: 1;
   }
 }
+@keyframes arrow__up_down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .stack__header {
   font-weight: 700;
+}
+
+.stack__more {
+  position: relative;
+  display: flex;
+  left: calc(var(--index) * 3.1);
+  margin-top: calc(var(--index) / 2);
+}
+.stack__more::after {
+  position: absolute;
+  content: "↓";
+  font-size: calc(var(--index) * 3.3);
+  bottom: calc(var(--index) - 180%);
+  left: calc(var(--index) * 6.5);
 }
 
 .profile__pdf {
@@ -113,6 +145,7 @@ header {
   grid-row: 9;
   justify-self: end;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .info {
@@ -121,15 +154,38 @@ header {
   background: radial-gradient(100% 70%, rgb(5, 5, 5), rgb(24, 25, 25));
   font-family: "Montserrat", sans-serif;
   color: white;
+  font-size: calc(var(--index) * 1.1);
+}
+
+.info__header {
+  position: absolute;
+  font-weight: 700;
+  font-size: calc(var(--index) * 1.6);
+  top: calc(var(--index) * 1.7);
+  left: var(--index);
 }
 
 .info__list {
   position: absolute;
   top: calc(var(--index) * 6);
-  left: calc(var(--index));
+  left: calc(var(--index) * 1.5);
 }
 .info__list li {
   list-style: none;
+}
+
+.info__education {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--index) / 3);
+  top: calc(var(--index) * 25);
+  left: calc(var(--index) * 1.5);
+  font-size: calc(var(--index) * 1.3);
+}
+
+.education__header {
+  font-weight: 700;
 }
 
 .works {
