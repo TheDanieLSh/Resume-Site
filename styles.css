@@ -91,11 +91,13 @@ header {
   grid-row: 7;
   display: flex;
   flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
   gap: calc(var(--index) / 2.5);
   animation: stack_appear 1.2s;
 }
-.profile__stack:hover + .stack__more::after {
-  animation: arrow__up_down 1s;
+.profile__stack:hover .stack__more::after {
+  animation: arrow__up_down 0.5s;
 }
 
 @keyframes stack_appear {
@@ -109,16 +111,13 @@ header {
   }
 }
 @keyframes arrow__up_down {
-  from {
+  0% {
     transform: translateY(0);
   }
-  to {
-    transform: translateY(10%);
+  50% {
+    transform: translateY(8%);
   }
-  to {
-    transform: translateY(-10%);
-  }
-  to {
+  100% {
     transform: translateY(0);
   }
 }
@@ -131,8 +130,25 @@ header {
   display: flex;
   left: calc(var(--index) * 3.1);
   margin-top: calc(var(--index) / 2);
+  cursor: pointer;
 }
 .stack__more::after {
+  position: absolute;
+  content: "↓";
+  font-size: calc(var(--index) * 3.3);
+  bottom: calc(var(--index) - 180%);
+  left: calc(var(--index) * 6.5);
+}
+
+.profile__works {
+  position: relative;
+  grid-column: 2;
+  grid-row: 8;
+  justify-self: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+.profile__works::after {
   position: absolute;
   content: "↓";
   font-size: calc(var(--index) * 3.3);
