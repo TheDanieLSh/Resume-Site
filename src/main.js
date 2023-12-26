@@ -7,6 +7,8 @@ new fullpage('#fullpage', {
     navigation: true,
     navigationTooltips: ['Главная', 'Подробная информация', 'Мои работы'],
     scrollOverflow: false, //!!!!
+    loopBottom: true,
+    loopTop: true,
 });
 const works = document.querySelector('.works');
 works.addEventListener('mouseover', (e) => {
