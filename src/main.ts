@@ -17,3 +17,10 @@ works.addEventListener('mouseover', (e: MouseEvent) => {
         title.innerHTML = '';
     }
 })
+
+function moveToInfo(): void {
+    fullpage_api.moveTo(2)
+}
+function moveToWorks(): void {
+    fullpage_api.moveTo(3)
+}

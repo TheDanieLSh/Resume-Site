@@ -18,3 +18,9 @@ works.addEventListener('mouseover', (e) => {
         title.innerHTML = '';
     }
 });
+function moveToInfo() {
+    fullpage_api.moveTo(2);
+}
+function moveToWorks() {
+    fullpage_api.moveTo(3);
+}

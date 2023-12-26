@@ -145,15 +145,22 @@ header {
   grid-column: 2;
   grid-row: 8;
   justify-self: center;
+  align-self: self-end;
   font-weight: 700;
+  height: -moz-max-content;
+  height: max-content;
   cursor: pointer;
 }
 .profile__works::after {
   position: absolute;
   content: "↓";
   font-size: calc(var(--index) * 3.3);
+  font-weight: normal;
   bottom: calc(var(--index) - 180%);
-  left: calc(var(--index) * 6.5);
+  left: calc(var(--index) * 6.8);
+}
+.profile__works:hover::after {
+  animation: arrow__up_down 0.5s;
 }
 
 .profile__pdf {
