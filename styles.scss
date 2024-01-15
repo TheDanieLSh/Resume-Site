@@ -199,17 +199,6 @@ header {
     height: 100vh;
     background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(24,25,25,1) 100%);
 }
-.layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100dvh;
-    background-color: black;
-    opacity: 0.3;
-    display: none;
-    z-index: 1;
-}
 .works__header {
     position: absolute;
     left: 50%;
@@ -227,7 +216,6 @@ header {
     justify-content: center;
     perspective: calc(var(--index) * 22);
     transform-style: preserve-3d;
-    
 }
 .work-list__item {
     position: relative;
@@ -276,16 +264,18 @@ header {
 }
 .works__popup {
     position: absolute;
-    bottom: var(--index);
+    bottom: 0.01%;
     width: calc(var(--index) * 40);
     height: calc(var(--index) * 20);
     padding: calc(var(--index) / 1.1);
     border: thick solid white;
     border-radius: calc(var(--index) * 2);
     background-image: none !important;
+    background-color: black;
+    opacity: 0.3;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    z-index: 2;
+    z-index: 1;
 }
 .work-name {
     position: absolute;

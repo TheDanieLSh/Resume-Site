@@ -23,10 +23,14 @@ works.addEventListener('mouseover', e => {
 });
 works.addEventListener('click', e => {
     if (e.target.classList.contains('work-list__item')) {
-        e.target.classList.add('works__popup');
+        e.target.classList.add('works__popup', 'works__active');
         e.target.classList.remove('work-list__item');
         document.querySelector('.layer').style.display = 'block';
         e.target.innerHTML = '<p>' + e.target.dataset.description + '</p>' + '<p>' + e.target.dataset.link + '</p>' + '<p>' + e.target.dataset.git + '</p>';
+    }
+    if (!e.target.classList.contains('work-list__item')) {
+        works.querySelector('.works__active').classList.add('work-list__item');
+        works.querySelector('.works__active').classList.remove('works__popup', 'works__active');
     }
 })
 
