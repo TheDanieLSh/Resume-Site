@@ -31,15 +31,21 @@ works.addEventListener('mouseover', e => {
     }
 });
 works.addEventListener('click', e => {
+    layer = document.querySelector('.layer');
+    worksPopup = document.querySelector('.works__popup');
+    worksActive = document.querySelector('.works__active');
     if (e.target.classList.contains('work-list__item')) {
         e.target.classList.add('works__active');
-        document.querySelector('.layer').style.display = 'block';
-        document.querySelector('.works__popup').style.display = 'block';
-    } else if (document.querySelector('.works__popup').style.display == 'block') {
+        key = document.querySelector('.works__active').dataset.key;
+        layer.style.display = 'block';
+        console.log(key);
+        document.querySelector('.popup__description').innerHTML = workData.key.description;
+        worksPopup.style.display = 'block';
+    } else if (worksPopup.style.display == 'block') {
         if (!e.target.classList.contains('works__popup')) {
-            document.querySelector('.works__popup').style.display = 'none';
-            document.querySelector('.layer').style.display = 'none';
-            document.querySelector('.works__active').classList.remove('works__active');
+            worksPopup.style.display = 'none';
+            layer.style.display = 'none';
+            worksActive.classList.remove('works__active');
         }
     }
 })
