@@ -11,6 +11,12 @@ new fullpage('#fullpage', {
     loopTop: true,
 });
 
+const workData = {
+    'animerai': {
+        'name': ''
+    }
+}
+
 const works = document.querySelector('.works');
 works.addEventListener('mouseover', e => {
     const title = document.querySelector('.work-name');
