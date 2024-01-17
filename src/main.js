@@ -13,8 +13,11 @@ new fullpage('#fullpage', {
 
 const workData = {
     'animerai': {
-        'name': ''
-    }
+        'description': 'Мой главный проект. Здесь я с нуля разработал дизайн, реализовал полноценный роутинг через React Router с применением динамических параметров и поиск товаров с выпадающей строкой. Список товаров в каждом разделе загружается динамически в зависимости от своей классификации из базы данных, представляющей собой json файл. В качестве инструмента управления состоянием использовал Redux. Сайт полностью адаптивен для мобильных устройств.',
+        'site-link': 'https://animerai.it-reu.ru',
+        'git-link': 'https://github.com/TheDanieLSh/Resume/tree/main/Online%20store',
+    },
+
 }
 
 const works = document.querySelector('.works');
@@ -29,14 +32,15 @@ works.addEventListener('mouseover', e => {
 });
 works.addEventListener('click', e => {
     if (e.target.classList.contains('work-list__item')) {
-        e.target.classList.add('works__popup', 'works__active');
-        e.target.classList.remove('work-list__item');
+        e.target.classList.add('works__active');
         document.querySelector('.layer').style.display = 'block';
-        e.target.innerHTML = '<p>' + e.target.dataset.description + '</p>' + '<p>' + e.target.dataset.link + '</p>' + '<p>' + e.target.dataset.git + '</p>';
-    }
-    if (!e.target.classList.contains('work-list__item')) {
-        works.querySelector('.works__active').classList.add('work-list__item');
-        works.querySelector('.works__active').classList.remove('works__popup', 'works__active');
+        document.querySelector('.works__popup').style.display = 'block';
+    } else if (document.querySelector('.works__popup').style.display == 'block') {
+        if (!e.target.classList.contains('works__popup')) {
+            document.querySelector('.works__popup').style.display = 'none';
+            document.querySelector('.layer').style.display = 'none';
+            document.querySelector('.works__active').classList.remove('works__active');
+        }
     }
 })
 
