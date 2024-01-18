@@ -277,9 +277,8 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    top: calc(var(--index) * 7.5);
+    margin: 0 auto;
     width: calc(var(--index) * 35);
     height: calc(var(--index) * 18);
     padding: calc(var(--index) / 1.2);
@@ -290,7 +289,9 @@ header {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 90%;
+    overflow: hidden;
     z-index: 2;
+    animation: popup_appear 1s;
 }
 .popup__links {
     display: flex;
@@ -303,7 +304,38 @@ header {
     font-size: 115%;
 }
 .works__active {
-    display: none;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    // animation: item_to_popup_anim 1s forwards;
+}
+// @keyframes item_to_popup_anim {
+//     from {
+//         display: block;
+//         width: calc(var(--index) * 3.5);
+//         height: calc(var(--index) * 17.5);
+//     }
+//     to {
+//         position: absolute;
+//         display: none;
+//         width: calc(var(--index) * 35);
+//         height: var(--index);
+//         border: thick solid white;
+//         border-radius: calc(var(--index) * 2);
+//         background-color: rgba(0, 0, 0, 0.3);
+//     }
+// }
+@keyframes popup_appear {
+    from {
+        top: calc(var(--index) * 7.5);
+        bottom: auto;
+        height: var(--index);
+    }
+    to {
+        top: calc(var(--index) * 7.5);
+        bottom: auto;
+        height: calc(var(--index) * 18);
+    }
 }
 .layer {
     display: none;
@@ -315,4 +347,13 @@ header {
     background-color: black;
     opacity: 0.6;
     z-index: 1;
+    animation: layer_anim 1s;
+}
+@keyframes layer_anim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
+    }
 }

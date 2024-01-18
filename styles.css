@@ -297,9 +297,8 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  top: calc(var(--index) * 7.5);
+  margin: 0 auto;
   width: calc(var(--index) * 35);
   height: calc(var(--index) * 18);
   padding: calc(var(--index) / 1.2);
@@ -311,7 +310,9 @@ header {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 90%;
+  overflow: hidden;
   z-index: 2;
+  animation: popup_appear 1s;
 }
 
 .popup__links {
@@ -327,9 +328,23 @@ header {
 }
 
 .works__active {
-  display: none;
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
 }
 
+@keyframes popup_appear {
+  from {
+    top: calc(var(--index) * 7.5);
+    bottom: auto;
+    height: var(--index);
+  }
+  to {
+    top: calc(var(--index) * 7.5);
+    bottom: auto;
+    height: calc(var(--index) * 18);
+  }
+}
 .layer {
   display: none;
   position: absolute;
@@ -340,4 +355,14 @@ header {
   background-color: black;
   opacity: 0.6;
   z-index: 1;
+  animation: layer_anim 1s;
+}
+
+@keyframes layer_anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -49,14 +49,16 @@ works.addEventListener('mouseover', e => {
         title.innerHTML = '';
     }
 });
-works.addEventListener('click', e => {
+works.addEventListener('click', /*async*/ e => {
     layer = document.querySelector('.layer');
     worksPopup = document.querySelector('.works__popup');
     worksActive = document.querySelector('.works__active');
     if (e.target.classList.contains('work-list__item')) {
+        e.target.classList.remove('work-list__item');
+        layer.style.display = 'block';
         e.target.classList.add('works__active');
         key = document.querySelector('.works__active').dataset.key;
-        layer.style.display = 'block';
+        // await new Promise(resolve => setTimeout(resolve, 1000));
         document.querySelector('.popup__description').innerHTML = workData[key].description;
         document.querySelector('.popup__site-link').setAttribute('href', workData[key]['site-link']);
         document.querySelector('.popup__git-link').setAttribute('href', workData[key]['git-link']);
@@ -66,6 +68,7 @@ works.addEventListener('click', e => {
             worksPopup.style.display = 'none';
             layer.style.display = 'none';
             worksActive.classList.remove('works__active');
+            worksActive.classList.add('work-list__item');
         }
     }
 })
