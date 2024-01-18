@@ -316,8 +316,14 @@ header {
 
 .popup__links {
   display: flex;
+  gap: calc(var(--index) * 8);
+  justify-content: center;
   margin: calc(var(--index) * 2.5) 0;
+}
+
+.popup__site-link, .popup__git-link {
   font-weight: 700;
+  font-size: 115%;
 }
 
 .works__active {
