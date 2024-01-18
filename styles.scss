@@ -280,16 +280,27 @@ header {
     top: 0;
     bottom: 0;
     margin: auto;
-    width: calc(var(--index) * 40);
-    height: calc(var(--index) * 20);
-    padding: calc(var(--index) / 1.1);
+    width: calc(var(--index) * 35);
+    height: calc(var(--index) * 18);
+    padding: calc(var(--index) / 1.2);
     border: thick solid white;
     border-radius: calc(var(--index) * 2);
     background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7px);
     color: white;
     font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
     z-index: 2;
 }
+.popup__links {
+    display: flex;
+    margin: calc(var(--index) * 2.5) 0;
+    font-weight: 700;
+}
+// .popup__site-link, .popup__git-link{
+//     display: inline-block;
+//     margin: var(--index) 0;
+// }
 .works__active {
     display: none;
 }
@@ -301,6 +312,6 @@ header {
     width: 100vw;
     height: 100dvh;
     background-color: black;
-    opacity: 0.3;
+    opacity: 0.6;
     z-index: 1;
 }

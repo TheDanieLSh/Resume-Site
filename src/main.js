@@ -38,8 +38,7 @@ works.addEventListener('click', e => {
         e.target.classList.add('works__active');
         key = document.querySelector('.works__active').dataset.key;
         layer.style.display = 'block';
-        console.log(key);
-        document.querySelector('.popup__description').innerHTML = workData.key.description;
+        document.querySelector('.popup__description').innerHTML = workData[key].description;
         worksPopup.style.display = 'block';
     } else if (worksPopup.style.display == 'block') {
         if (!e.target.classList.contains('works__popup')) {
