@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 
 * {
     margin: 0;
@@ -20,9 +20,8 @@ a {
     font-size: var(--index);
 }
 
-
 header {
-    background: linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(24,25,25,1) 100%);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 1) 0%, rgba(24, 25, 25, 1) 100%);
     height: 100vh;
     color: white;
     font-size: calc(var(--index));
@@ -32,9 +31,12 @@ header {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 5)) repeat(2, calc(var(--index) * 2)) repeat(3, calc(var(--index) * 3));
+    grid-template-rows: repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 5)) repeat(
+            2,
+            calc(var(--index) * 2)
+        ) repeat(3, calc(var(--index) * 3));
     padding: 5%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .profile__pic {
     position: relative;
@@ -85,7 +87,6 @@ header {
     height: max-content;
     gap: calc(var(--index) / 2.5);
     animation: stack_appear 1.2s;
-    
 }
 @keyframes stack_appear {
     from {
@@ -121,7 +122,7 @@ header {
     cursor: pointer;
     &::after {
         position: absolute;
-        content: '↓';
+        content: "↓";
         font-size: calc(var(--index) * 3.3);
         bottom: calc(var(--index) - 180%);
         left: calc(var(--index) * 6.5);
@@ -141,7 +142,7 @@ header {
     cursor: pointer;
     &::after {
         position: absolute;
-        content: '↓';
+        content: "↓";
         font-size: calc(var(--index) * 3.3);
         bottom: calc(var(--index) - 180%);
         left: calc(var(--index) * 6.8);
@@ -158,12 +159,11 @@ header {
     cursor: pointer;
 }
 
-
 .info {
     position: relative;
     height: 100vh;
-    background: radial-gradient(100% 70%, rgba(5,5,5,1), rgba(24,25,25,1));
-    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(100% 70%, rgba(5, 5, 5, 1), rgba(24, 25, 25, 1));
+    font-family: "Montserrat", sans-serif;
     color: white;
     font-size: calc(var(--index) * 1.1);
 }
@@ -195,11 +195,10 @@ header {
     font-weight: 700;
 }
 
-
 .works {
     position: relative;
     height: 100vh;
-    background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(24,25,25,1) 100%);
+    background: linear-gradient(to top, rgba(5, 5, 5, 1) 0%, rgba(24, 25, 25, 1) 100%);
 }
 .works__header {
     position: absolute;
@@ -209,7 +208,7 @@ header {
     color: white;
     font-size: calc(var(--index) * 2.5);
     font-weight: 500;
-    font-family: 'Tektur', sans-serif;
+    font-family: "Tektur", sans-serif;
     letter-spacing: calc(var(--index) / 3.2);
 }
 .work-list {
@@ -230,8 +229,9 @@ header {
     transition-duration: 0.2s;
     cursor: pointer;
 
-    &::before, &::after {
-        content: '';
+    &::before,
+    &::after {
+        content: "";
         position: absolute;
         width: calc(var(--index) / 3);
         height: 100%;
@@ -256,7 +256,7 @@ header {
     }
     &:has(+ :hover) {
         transform: translateZ(calc(var(--index) * 1.5)) rotateY(-15deg);
-    } 
+    }
     &:has(+ * + :hover) {
         transform: translateZ(calc(var(--index) / 2)) rotateY(-5deg);
     }
@@ -272,10 +272,12 @@ header {
     color: white;
     font-size: calc(var(--index) * 1.5);
     font-weight: 400;
-    font-family: 'Tektur', sans-serif;
+    font-family: "Tektur", sans-serif;
 }
 .works__popup {
     display: none;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     left: 0;
     right: 0;
@@ -289,8 +291,8 @@ header {
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(7px);
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 90%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 93%;
     overflow: hidden;
     z-index: 2;
     animation: popup_appear 1s;
@@ -299,9 +301,10 @@ header {
     display: flex;
     gap: calc(var(--index) * 8);
     justify-content: center;
-    margin: calc(var(--index) * 2.5) 0;
+    margin-top: calc(var(--index) * 2.5);
 }
-.popup__site-link, .popup__git-link{
+.popup__site-link,
+.popup__git-link {
     font-weight: 700;
     font-size: 115%;
 }
@@ -329,13 +332,9 @@ header {
 // }
 @keyframes popup_appear {
     from {
-        top: calc(var(--index) * 7.5);
-        bottom: auto;
         height: var(--index);
     }
     to {
-        top: calc(var(--index) * 7.5);
-        bottom: auto;
         height: calc(var(--index) * 18);
     }
 }
@@ -357,5 +356,64 @@ header {
     }
     to {
         opacity: 0.6;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .info {
+        font-size: calc(var(--index) * 1.5);
+    }
+    .info__header {
+        font-size: calc(var(--index) * 2);
+        top: calc(var(--index) * 1.7);
+    }
+    .info__education {
+        top: calc(var(--index) * 38);
+        font-size: calc(var(--index) * 1.5);
+    }
+
+    .works__header {
+        width: 100%;
+        text-align: center;
+        font-size: calc(var(--index) * 3.2);
+    }
+    .work-list {
+        margin-top: calc(var(--index) * 7.5);
+        flex-direction: column;
+        align-items: center;
+    }
+    .work-list__item {
+        width: 85%;
+        height: calc(var(--index) * 5);
+        margin: calc(var(--index) / 2) 0;
+    }
+    .work-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: calc(var(--index) * 42);
+        width: 90%;
+        height: 8%;
+        text-align: center;
+        font-size: calc(var(--index) * 2);
+        z-index: 2;
+    }
+    .works__popup {
+        top: 2%;
+        width: 95%;
+        height: 59%;
+        font-size: 150%;
+    }
+    .popup__links {
+        gap: calc(var(--index) * 4);
+        text-align: center;
+    }
+    @keyframes popup_appear {
+        from {
+            height: 2%;
+        }
+        to {
+            height: 59%;
+        }
     }
 }

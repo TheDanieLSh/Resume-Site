@@ -62,8 +62,8 @@ works.addEventListener('click', /*async*/ e => {
         document.querySelector('.popup__description').innerHTML = workData[key].description;
         document.querySelector('.popup__site-link').setAttribute('href', workData[key]['site-link']);
         document.querySelector('.popup__git-link').setAttribute('href', workData[key]['git-link']);
-        worksPopup.style.display = 'block';
-    } else if (worksPopup.style.display == 'block') {
+        worksPopup.style.display = 'flex';
+    } else if (worksPopup.style.display == 'flex') {
         if (!e.target.classList.contains('works__popup')) {
             worksPopup.style.display = 'none';
             layer.style.display = 'none';

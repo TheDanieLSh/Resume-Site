@@ -295,6 +295,8 @@ header {
 
 .works__popup {
   display: none;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   left: 0;
   right: 0;
@@ -310,7 +312,7 @@ header {
           backdrop-filter: blur(7px);
   color: white;
   font-family: "Montserrat", sans-serif;
-  font-size: 90%;
+  font-size: 93%;
   overflow: hidden;
   z-index: 2;
   animation: popup_appear 1s;
@@ -320,10 +322,11 @@ header {
   display: flex;
   gap: calc(var(--index) * 8);
   justify-content: center;
-  margin: calc(var(--index) * 2.5) 0;
+  margin-top: calc(var(--index) * 2.5);
 }
 
-.popup__site-link, .popup__git-link {
+.popup__site-link,
+.popup__git-link {
   font-weight: 700;
   font-size: 115%;
 }
@@ -336,13 +339,9 @@ header {
 
 @keyframes popup_appear {
   from {
-    top: calc(var(--index) * 7.5);
-    bottom: auto;
     height: var(--index);
   }
   to {
-    top: calc(var(--index) * 7.5);
-    bottom: auto;
     height: calc(var(--index) * 18);
   }
 }
@@ -365,5 +364,62 @@ header {
   }
   to {
     opacity: 0.6;
+  }
+}
+@media screen and (max-width: 500px) {
+  .info {
+    font-size: calc(var(--index) * 1.5);
+  }
+  .info__header {
+    font-size: calc(var(--index) * 2);
+    top: calc(var(--index) * 1.7);
+  }
+  .info__education {
+    top: calc(var(--index) * 38);
+    font-size: calc(var(--index) * 1.5);
+  }
+  .works__header {
+    width: 100%;
+    text-align: center;
+    font-size: calc(var(--index) * 3.2);
+  }
+  .work-list {
+    margin-top: calc(var(--index) * 7.5);
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-list__item {
+    width: 85%;
+    height: calc(var(--index) * 5);
+    margin: calc(var(--index) / 2) 0;
+  }
+  .work-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(var(--index) * 42);
+    width: 90%;
+    height: 8%;
+    text-align: center;
+    font-size: calc(var(--index) * 2);
+    z-index: 2;
+  }
+  .works__popup {
+    top: 2%;
+    width: 95%;
+    height: 59%;
+    font-size: 150%;
+  }
+  .popup__links {
+    gap: calc(var(--index) * 4);
+    text-align: center;
+  }
+  @keyframes popup_appear {
+    from {
+      height: 2%;
+    }
+    to {
+      height: 59%;
+    }
   }
 }/*# sourceMappingURL=styles.css.map */
