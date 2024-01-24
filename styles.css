@@ -367,6 +367,13 @@ header {
   }
 }
 @media screen and (max-width: 500px) {
+  .profile {
+    font-size: 130%;
+  }
+  .profile__pic {
+    width: calc(var(--index) * 9);
+    height: calc(var(--index) * 9);
+  }
   .info {
     font-size: calc(var(--index) * 1.5);
   }

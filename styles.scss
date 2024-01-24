@@ -31,10 +31,9 @@ header {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 5)) repeat(
-            2,
-            calc(var(--index) * 2)
-        ) repeat(3, calc(var(--index) * 3));
+    grid-template-rows:
+        repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 5)) repeat(2, calc(var(--index) * 2))
+        repeat(3, calc(var(--index) * 3));
     padding: 5%;
     font-family: "Montserrat", sans-serif;
 }
@@ -360,6 +359,14 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+    .profile {
+        font-size: 130%;
+    }
+    .profile__pic {
+        width: calc(var(--index) * 9);
+        height: calc(var(--index) * 9);
+    }
+
     .info {
         font-size: calc(var(--index) * 1.5);
     }
