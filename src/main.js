@@ -1,6 +1,3 @@
-console.log('viewport width ->', window.innerWidth);
-console.log('viewport height ->', window.innerHeight);
-
 new fullpage('#fullpage', {
     scrollHorizontally: true,
     scrollingSpeed: 900,

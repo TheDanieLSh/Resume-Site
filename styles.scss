@@ -361,10 +361,54 @@ header {
 @media screen and (max-width: 500px) {
     .profile {
         font-size: 130%;
+        grid-template-rows:
+        repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 3)) repeat(2, calc(var(--index) * 2))
+        repeat(3, calc(var(--index) * 3)) repeat(4, calc(var(--index) * 3)) repeat(4, calc(var(--index) * 2));
     }
     .profile__pic {
-        width: calc(var(--index) * 9);
-        height: calc(var(--index) * 9);
+        grid-column: 1/3;
+        grid-row: 1/3;
+        width: calc(var(--index) * 10);
+        height: calc(var(--index) * 10);
+    }
+    .profile__name {
+        position: absolute;
+        width: 46%;
+        height: 5%;
+        margin-top: 2%;
+        text-align: right;
+        font-size: 120%;
+    }
+    .profile__position {
+        position: absolute;
+        top: 9%;
+        width: 46%;
+        height: 5%;
+        margin-top: 2%;
+        text-align: right;
+        font-size: 110%;
+    }
+    .profile__birthdate {
+        grid-row: 4;
+        margin-top: 2%;
+    }
+    .profile__stack {
+        position: absolute;
+        top: 33%;
+        width: calc(var(--index) * 28);
+        font-size: 110%;
+    }
+    .profile__more, .profile__works {
+        display: none;
+    }
+    .profile__phone-number {
+        grid-row: 16;
+    }
+    .profile__email {
+        grid-row: 17;
+    }
+    .profile__pdf {
+        display: none;
     }
 
     .info {
