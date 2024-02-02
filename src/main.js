@@ -24,7 +24,7 @@ const workData = {
         'site-link': 'https://corvo.it-reu.ru',
         'git-link': 'https://github.com/TheDanieLSh/Resume/tree/main/SPA%20landing',
     },
-    'beauty':  {
+    'beauty': {
         'description': 'Сайт с реализацией слайдера и собственного параллакс эффекта',
         'site-link': 'https://thebeauty.it-reu.ru',
         'git-link': 'https://github.com/TheDanieLSh/Resume/tree/main/Slider%20and%20parallax',
